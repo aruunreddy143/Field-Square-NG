@@ -9,4 +9,13 @@ import * as fsGlobal from './global';
 export class AppComponent {
   title = 'field-square';
   nav = fsGlobal.fspObj;
+  workspaceoptions = fsGlobal.fspObj.workspaceoption;
+  assettype = fsGlobal.fspObj.assettypes;
+  tasktype = fsGlobal.fspObj.tasktype;
+
+  constructor() {
+    console.log('Workspaceoptions', this.workspaceoptions);
+    console.log('Assettype', this.assettype);
+    console.log('Tasktype',this.tasktype);
+  }
 }

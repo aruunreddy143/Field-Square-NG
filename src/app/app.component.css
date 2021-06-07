@@ -12,3 +12,21 @@
 .navbar a, .navbar.dropdown a{
   color:#ccc;
 }
+
+.navbar a:hover, .nav-item .bi:hover{
+  color:#1993d1 !important;
+  cursor: pointer;
+}
+
+.navbar a:hover{
+  color:#1993d1;
+  text-decoration:underline;
+}
+
+.nav-item{
+  border-left:1px solid #393939;
+}
+
+.me-auto .nav-item:last-child{
+  border-right:1px solid #393939;
+}
