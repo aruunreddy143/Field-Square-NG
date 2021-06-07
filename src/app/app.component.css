@@ -1,0 +1,14 @@
+.logo {
+  background:url('../assets/images/appicon.png') no-repeat;
+  width:50px;
+  height:50px;
+  margin-right: 10px;
+}
+
+.nav-menu, .navbar{
+  background: #454545 !important;
+}
+
+.navbar a, .navbar.dropdown a{
+  color:#ccc;
+}
