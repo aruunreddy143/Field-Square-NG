@@ -1,6 +1,13 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
+// Material module
+import { MaterialModule } from 'src/app/dashboard/material.module';
+
+// Project Components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,7 +45,10 @@ import { ReportsComponent } from './dashboard/reports/reports.component';
     ReactiveFormsModule,
     MaterialModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide:LocationStrategy, useClass : HashLocationStrategy}
+  ],
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
