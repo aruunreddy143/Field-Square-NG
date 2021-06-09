@@ -33,3 +33,6 @@ $field-square-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($field-square-theme);
 
+.cdk-overlay-container{
+  background:#454545 !important;
+}

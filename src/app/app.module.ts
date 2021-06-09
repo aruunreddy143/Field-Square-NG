@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 
 // Material module
 import { MaterialModule } from 'src/app/dashboard/material.module';
@@ -10,9 +12,7 @@ import { MaterialModule } from 'src/app/dashboard/material.module';
 // Project Components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './dashboard/home/home.component';
 import { TaskComponent } from './dashboard/task/task.component';
 import { ScheduleComponent } from './dashboard/schedule/schedule.component';
 import { AssetsComponent } from './dashboard/assets/assets.component';
@@ -26,7 +26,6 @@ import { ReportsComponent } from './dashboard/reports/reports.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
     TaskComponent,
     ScheduleComponent,
     AssetsComponent,
@@ -46,7 +45,8 @@ import { ReportsComponent } from './dashboard/reports/reports.component';
     MaterialModule
   ],
   providers: [
-    {provide:LocationStrategy, useClass : HashLocationStrategy}
+    {provide:LocationStrategy, useClass : HashLocationStrategy},
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

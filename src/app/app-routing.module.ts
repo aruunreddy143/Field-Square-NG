@@ -10,6 +10,7 @@ import {MapComponent} from './dashboard/map/map.component';
 import {DocumentsComponent} from './dashboard/documents/documents.component';
 import {InventoryComponent} from './dashboard/inventory/inventory.component';
 import {ReportsComponent} from './dashboard/reports/reports.component';
+import {LoginComponent} from './login/login.component'
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'documents', component:DocumentsComponent},
   {path: 'inventory', component:InventoryComponent},
   {path: 'reports', component:ReportsComponent},
+  {path: 'login', component:LoginComponent},
   {path:'',redirectTo:'/',pathMatch:'full'}
 ];
 
