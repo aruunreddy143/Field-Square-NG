@@ -108,5 +108,8 @@
       }
     }
   },
-  "defaultProject": "field-square"
+  "defaultProject": "field-square",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

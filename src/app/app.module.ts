@@ -21,6 +21,10 @@ import { MapComponent } from './dashboard/map/map.component';
 import { DocumentsComponent } from './dashboard/documents/documents.component';
 import { InventoryComponent } from './dashboard/inventory/inventory.component';
 import { ReportsComponent } from './dashboard/reports/reports.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import { ReportsComponent } from './dashboard/reports/reports.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [
     {provide:LocationStrategy, useClass : HashLocationStrategy}
