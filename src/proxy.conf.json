@@ -1,0 +1,8 @@
+{
+  "/*": {
+    "target": "https://staging.fieldsquared.com",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

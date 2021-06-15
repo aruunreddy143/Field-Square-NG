@@ -22,9 +22,12 @@ import { DocumentsComponent } from './dashboard/documents/documents.component';
 import { InventoryComponent } from './dashboard/inventory/inventory.component';
 import { ReportsComponent } from './dashboard/reports/reports.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { reducers, metaReducers } from './store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import {EffectsModule} from "@ngrx/effects";
+import {AuthEffects} from "./login/store/login.effects";
+import {AuthService} from "./login/login.service";
 
 @NgModule({
   declarations: [
@@ -47,12 +50,14 @@ import { environment } from '../environments/environment';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [
     {provide:LocationStrategy, useClass : HashLocationStrategy},
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+    AuthService
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

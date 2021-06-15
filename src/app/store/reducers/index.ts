@@ -1,12 +1,10 @@
 import {
   ActionReducer,
   ActionReducerMap, combineReducers,
-  createFeatureSelector,
-  createSelector,
   MetaReducer
 } from '@ngrx/store';
-import { environment } from '../../environments/environment';
-import {loginReducer} from "../login/store/login.reducer";
+import { environment } from '../../../environments/environment';
+import {userReducer, UserState} from '../../login/store/login.reducers'
 
 // console.log all actions
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -19,16 +17,14 @@ export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
 }
 
 export const reducer = combineReducers({
-  featureA: loginReducer
 });
 
-export interface State {
-
+export interface AppState {
+  login: UserState;
 }
 
-export const reducers: ActionReducerMap<State> = {
-  loginReducer
+export const reducers: ActionReducerMap<AppState> = {
+  login: userReducer
 };
 
-
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [debug] : [];
+export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [debug] : [];
