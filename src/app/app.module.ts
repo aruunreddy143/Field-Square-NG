@@ -20,11 +20,13 @@ import { environment } from '../environments/environment';
 import {EffectsModule} from "@ngrx/effects";
 import {AuthEffects} from "./login/store/login.effects";
 import {AuthService} from "./login/login.service";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {PortalModule} from '@angular/cdk/portal';
@@ -112,7 +112,8 @@ import {ReportsComponent} from "./reports/reports.component";
   ],
   providers:[
     { provide: MatDialogRef, useValue: {} },
-    { provide: MAT_DIALOG_DATA, useValue: [] },]
+    { provide: MAT_DIALOG_DATA, useValue: [] },],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MaterialModule {}
 
