@@ -55,7 +55,6 @@ import {AuthService} from "./login/login.service";
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [
-    {provide:LocationStrategy, useClass : HashLocationStrategy},
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
     AuthService
   ],

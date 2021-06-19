@@ -1,8 +1,12 @@
 {
-  "/*": {
+  "/": {
     "target": "https://staging.fieldsquared.com",
     "secure": false,
     "logLevel": "debug",
-    "changeOrigin": true
+    "changeOrigin": true,
+    "headers": {
+      "Connection": "keep-alive"
+    },
+    "pathRewrite": {"^/" : "https://staging.fieldsquared.com/"}
   }
 }

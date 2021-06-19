@@ -12,14 +12,9 @@ export interface UserState {
 // @ts-ignore
 export const initialState: UserState = {
   data: {
-    id: 1,
     Email: '',
-    firstName: '',
-    middleName: '',
-    lastName: '',
-    phone: '',
     Code: '',
-    DeviceId: "90.253.210.217"
+    AuthToken:''
   },
   status: Statuses.UNINITIALIZED,
 };

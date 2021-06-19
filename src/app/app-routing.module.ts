@@ -11,7 +11,7 @@ import {DocumentsComponent} from './dashboard/documents/documents.component';
 import {InventoryComponent} from './dashboard/inventory/inventory.component';
 import {ReportsComponent} from './dashboard/reports/reports.component';
 import {LoginComponent} from "./login/login.component";
-
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 const routes: Routes = [
   {path: 'task', component:TaskComponent},
@@ -23,6 +23,7 @@ const routes: Routes = [
   {path: 'inventory', component:InventoryComponent},
   {path: 'reports', component:ReportsComponent},
   {path: 'login', component:LoginComponent},
+  {path: 'dashboard', component:DashboardComponent},
   {path:'',redirectTo:'/',pathMatch:'full'}
 ];
 

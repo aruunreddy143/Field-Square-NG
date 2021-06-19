@@ -7,6 +7,7 @@ import {AuthService} from "../login.service";
 import {Router} from "@angular/router";
 import {Store} from "@ngrx/store";
 import * as userActions from "./login.actions";
+import {Token} from "@angular/compiler";
 
 @Injectable()
 export class AuthEffects {
@@ -16,8 +17,10 @@ export class AuthEffects {
     tap(() => this.store$.dispatch(userActions.LoadingUser())),
     switchMap(action => this.authService.login(action.params).pipe(
       tap(tokens => {
-        localStorage.setItem('accessToken', tokens.accessToken);
-        this.router.navigateByUrl('/core/my-day').then()
+        console.log(tokens);
+        localStorage.setItem('accessToken', tokens.AuthToken);
+        this.store$.dispatch(userActions.SetUser({user: tokens}));
+        this.router.navigateByUrl('/dashboard');
       }),
       map(() => userActions.GetProfile()),
       catchError(error => throwError(error))
@@ -30,8 +33,9 @@ export class AuthEffects {
       tap(res => (!!res.id && this.router.navigateByUrl('/auth/login'))),
       catchError(error => throwError(error))
     ))
-  ), { dispatch: false });
+  ), {dispatch: false});
 
   constructor(private actions$: Actions, private authService: AuthService,
-              private router: Router, private store$: Store) {}
+              private router: Router, private store$: Store) {
+  }
 }

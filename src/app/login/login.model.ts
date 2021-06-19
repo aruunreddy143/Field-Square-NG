@@ -10,7 +10,7 @@ export interface Login {
 }
 
 export interface Tokens {
-  accessToken: string;
+  AuthToken: string;
 }
 
 export interface SignUp {
@@ -24,12 +24,7 @@ export interface SignUp {
 }
 
 export interface User {
-  id: number;
-  Email: string;
-  firstName: string;
-  middleName?: string;
-  lastName: string;
-  phone?: string;
-  Code: '',
-  DeviceId: "90.253.210.217"
+  Email?: string;
+  Code?: '',
+  AuthToken: string
 }
