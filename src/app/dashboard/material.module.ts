@@ -41,6 +41,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {DashboardRoutingModule} from "./dashboard-routing.module";
+import {TaskComponent} from "./task/task.component";
+import {ScheduleComponent} from "./schedule/schedule.component";
+import {AssetsComponent} from "./assets/assets.component";
+import {CustomersComponent} from "./customers/customers.component";
+import {MapComponent} from "./map/map.component";
+import {DocumentsComponent} from "./documents/documents.component";
+import {InventoryComponent} from "./inventory/inventory.component";
+import {ReportsComponent} from "./reports/reports.component";
 
 
 @NgModule({
@@ -88,7 +97,19 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
     PortalModule,
     ScrollingModule
   ],
-  declarations: [],
+  imports: [
+    DashboardRoutingModule
+  ],
+  declarations: [
+    TaskComponent,
+    ScheduleComponent,
+    AssetsComponent,
+    CustomersComponent,
+    MapComponent,
+    DocumentsComponent,
+    InventoryComponent,
+    ReportsComponent
+  ],
   providers:[
     { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [] },]
